@@ -12,7 +12,9 @@ PIDFILE=${DIR}/$(basename $CMD .py).pid
 OUTFILE=${DIR}/$(basename $CMD .py).out
 ERRFILE=${DIR}/$(basename $CMD .py).err
 
+OLD_PATH=$PATH
 . /etc/init.d/functions
+PATH=$OLD_PATH
 
 start() {
     echo -n "Starting ldap-auth-daemon: "
