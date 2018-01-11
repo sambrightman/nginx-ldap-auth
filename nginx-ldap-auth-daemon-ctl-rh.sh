@@ -31,7 +31,7 @@ start() {
             echo
         fi
     else
-        nohup ${CMD} >${OUTFILE} 2>${ERRFILE} &
+        nohup ${CMD} "$@" >${OUTFILE} 2>${ERRFILE} &
         PID=$!
         sleep 1
         kill -0 ${PID} 2>/dev/null && success || failure
@@ -40,9 +40,10 @@ start() {
     fi
 }
 
-case $1 in
+action=$1 && shift
+case ${action} in
     "start")
-        start
+        start "$@"
     ;;
     "stop")
         echo -n "Stopping ldap-auth-daemon: "
