@@ -1,1 +1,3 @@
-/nginx-ldap-auth-daemon.pid
+/nginx_ldap_auth_daemon.pid
+/nginx_ldap_auth_daemon.out
+/nginx_ldap_auth_daemon.err
