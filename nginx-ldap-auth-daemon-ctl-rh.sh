@@ -1,15 +1,16 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-CMD=nginx_ldap_auth_daemon.py
+DIR="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")" && pwd)"
+CMD=${DIR}/nginx_ldap_auth_daemon.py
+
 if [ ! -f "$CMD" ]; then
-    echo "Please run '$0' from the same directory where '$CMD' file resides"
+    echo "Could not find '$CMD'"
     exit 1
 fi
 
-CMD=$PWD/$CMD
-PIDFILE=$(basename $CMD .py).pid
-OUTFILE=$(basename $CMD .py).out
-ERRFILE=$(basename $CMD .py).err
+PIDFILE=${DIR}/$(basename $CMD .py).pid
+OUTFILE=${DIR}/$(basename $CMD .py).out
+ERRFILE=${DIR}/$(basename $CMD .py).err
 
 . /etc/init.d/functions
 
