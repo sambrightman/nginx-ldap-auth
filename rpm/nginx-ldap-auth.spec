@@ -24,7 +24,7 @@ servers proxied by NGINX or NGINX Plus.
 %install
 ls
 mkdir -p %buildroot%_bindir
-install -m755 nginx-ldap-auth-daemon.py %buildroot%_bindir/nginx-ldap-auth-daemon
+install -m755 nginx_ldap_auth_daemon.py %buildroot%_bindir/nginx_ldap_auth_daemon
 mkdir -p %buildroot%_unitdir
 install -m644 %name.service %buildroot%_unitdir/
 install -d -m755 %buildroot/etc/default

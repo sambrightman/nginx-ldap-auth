@@ -37,7 +37,7 @@ To install and configure the reference implementation, perform the following ste
 
 1. Copy the following files from your repository clone to the indicated hosts:
     - **nginx-ldap-auth.conf** – NGINX Plus configuration file, which contains the minimal set of directives for testing the reference implementation. Install on the NGINX Plus host (in the **/etc/nginx/conf.d** directory if using the conventional configuration scheme). To avoid configuration conflicts, remember to move or rename any default configuration files installed with NGINX Plus.
-    - **nginx-ldap-auth-daemon.py** – Python code for the ldap-auth daemon. Install on the host of your choice.
+    - **nginx_ldap_auth_daemon.py** – Python code for the ldap-auth daemon. Install on the host of your choice.
 
       Alternatively, use provided Dockerfile to build Docker image:
 
@@ -155,7 +155,7 @@ If you want to change the realm name from the default value (**Restricted**), un
 
 ### Authentication Server
 
-To modify the ldap-auth daemon to communicate with a different (non-LDAP) type of authentication server, write a new authentication-handler class to replace `LDAPAuthHandler` in the **nginx-ldap-auth-daemon.py** script.
+To modify the ldap-auth daemon to communicate with a different (non-LDAP) type of authentication server, write a new authentication-handler class to replace `LDAPAuthHandler` in the **nginx_ldap_auth_daemon.py** script.
 
 ## Compatibility
 
