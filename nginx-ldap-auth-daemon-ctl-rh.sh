@@ -16,6 +16,9 @@ ERRFILE=${DIR}/$(basename $CMD .py).err
 
 start() {
     echo -n "Starting ldap-auth-daemon: "
+
+    pip install -e ${DIR}/python-ldap || failure
+
     if [ -s ${PIDFILE} ]; then
         PID=$(cat ${PIDFILE})
         if kill -0 ${PID} 2>/dev/null; then

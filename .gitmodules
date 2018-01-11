@@ -1,0 +1,3 @@
+[submodule "python-ldap"]
+	path = python-ldap
+	url = http://github.com/sambrightman/python-ldap
